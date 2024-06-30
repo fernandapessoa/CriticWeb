@@ -1,0 +1,85 @@
+.title {
+  font-size: 3.5rem !important;
+  text-align: center !important;
+  margin: 2rem 0 1rem !important; 
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.search-home{
+  width: 400px ;
+  margin-top: auto;
+  margin-left: 40px;
+}
+
+.btn{
+  background-color: #2C3C50 !important;
+  border: none !important;
+  width: 50px !important;
+}
+
+.btn-light-home{
+  margin-top: 8px;
+  height: 50px;
+}
+
+.form-control{
+  background-color: #2C3C50 !important;
+  border: none !important;
+  color: #97D4F1 !important;
+}
+
+.search-icon{
+ font-size: 1.2rem !important;
+ color: #97D4F1 !important;
+ 
+}
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.search-input-home::placeholder {
+  color: #97D4F1 !important; /* Altere a cor do placeholder para #97D4F1 */
+  text-decoration: none !important;
+}
+
+
+.add-movie-button {
+  background-color: #A0E1FF; /* Cor de fundo */
+  color: #000; /* Cor do texto */
+  font-size: 1rem; /* Tamanho da fonte */
+  font-weight: bold; /* Negrito */
+  padding: 5px 10px; /* Espaçamento interno */
+  border: none; /* Remover borda padrão */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+  transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.add-movie-button:hover {
+  background-color: #81c2e7; /* Cor de fundo ao passar o mouse */
+  text-decoration: none !important;
+}
+
+.catalog{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.catalog a:hover {
+  text-decoration: none !important;
+  color: inherit !important; /* Garanta que a cor não mude para vermelho */
+}

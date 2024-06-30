@@ -1,0 +1,122 @@
+.signUp-container-signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    height: 100vh;          
+}
+
+.signUp-signUpBox {
+    background-color: #3A5B80;
+    width: 450px; /* Aumente a largura aqui conforme necessário */
+    max-width: 90%; /* Para garantir que a largura não exceda a tela em dispositivos menores */
+    height: auto; /* Ajuste automático da altura para o conteúdo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    border-radius: 5%;
+    padding: 20px; /* Adiciona um pouco de padding */
+    box-sizing: border-box; /* Inclui o padding na largura e altura totais */
+    margin-top: 2%;
+}
+
+.signUp-login-field {
+    margin-top: 2%;
+}
+
+.signUp-conteudo {
+    display: flex;
+    flex-direction: column; /* Define a direção dos itens para uma coluna vertical */
+    align-items: center; /* Centraliza horizontalmente todos os itens dentro de `.conteudo` */
+    justify-content: center; /* Centraliza verticalmente todos os itens dentro de `.conteudo` */
+    width: 100%; /* Ajuste a largura conforme necessário, ou deixe como está */
+    height: 100%;
+}
+
+.signUp-logo-image {
+    height: 100px; /* Aumentado de 70px para 100px */
+    margin-top: 50%;
+}
+
+.signUp-inputField {
+    width: 100%;
+    padding: 10px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #8EC3DB;
+}
+
+.signUp-signUpButton {
+    width: 50%;
+    padding: 5px;
+    margin-top: 1%;
+    margin-left: auto; /* Centraliza horizontalmente se necessário */
+    margin-right: auto; /* Centraliza horizontalmente se necessário */
+    background-color: #8EC3DB; /* Cor Azul Claro, comentário atualizado */
+    color: #171717; /* Correção da cor com adição de '#' */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 15px;
+}
+
+.signUp-errorMessage {
+    color: #FF0000; /* Vermelho */
+    margin: 10px 0;
+    text-align: center; /* Centraliza o texto */
+    width: 80%; /* Ajuste a largura conforme necessário */
+    word-wrap: break-word; /* Quebra as palavras longas */
+    white-space: pre-wrap; /* Mantém a quebra de linha e espaços em branco */
+}
+
+.signUp-loginLink {
+    margin-top: 20px;
+    color: #FFFFFF; /* Branco */
+    text-decoration: none;
+}
+
+.signUp-loginLink:hover {
+    text-decoration: underline;
+}
+
+.signUp-fieldLabel {
+    width: 100%; /* Ajuste conforme necessário */
+    color: #020202; /* Cor do texto */
+    font-size: 15px; /* Tamanho do texto */
+    font-weight: 600;
+}
+
+.signUp-signUp-button {
+    width: 100%; /* Ocupa a largura total do contêiner pai para flexibilidade */
+    display: flex; /* Usa flexbox para alinhamento interno */
+    justify-content: center; /* Centraliza o botão horizontalmente */
+    align-items: center; /* Centraliza o botão verticalmente se necessário */
+    margin-top: 2%;
+}
+
+.signUp-criarConta-text {
+    color: #020202;
+    font-size: 25px; /* Tamanho do texto */
+    font-weight: 700;
+    margin: 2%;
+}
+
+.signUp-label-input {
+    width: 100%; /* Ajusta para a largura total do contêiner */
+    display: flex; /* Usa flexbox para alinhamento interno */
+    flex-direction: column; /* Alinha os itens verticalmente */
+    margin-bottom: 1rem; /* Adiciona espaço entre os campos */
+}
+
+.signUp-form {
+    width: 100%; /* Ajusta a largura do formulário */
+    display: flex;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+}

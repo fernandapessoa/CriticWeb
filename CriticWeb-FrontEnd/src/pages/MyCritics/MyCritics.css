@@ -1,0 +1,57 @@
+.container-mycritics {
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 3%;
+}
+
+.search-bar {
+  margin-bottom: 20px; /* Espaço abaixo da barra de busca */
+  text-align: center;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 800px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #90CAF9;
+  background-color: #2C3C50 ;
+  color: #B0BEC5;
+  margin-bottom: 2%;
+}
+
+.review {
+  margin-bottom: 3%;
+}
+
+.mycritics-reviews .review-username {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: bold;
+}
+
+.review-rate {
+  color: #F6884A;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.review-movie-name {
+  color: #7993B0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-left: -5px;
+}
+
+.reviews-container {
+  background-color:#1e2c3b;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 10px;
+  width: 75%;
+}
+
+.mycritics-reviews{
+  display: flex;
+  justify-content: center;
+}

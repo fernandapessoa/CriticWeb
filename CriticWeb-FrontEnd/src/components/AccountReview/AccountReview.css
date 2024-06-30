@@ -1,0 +1,42 @@
+.review-header {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.review-header .icon {
+cursor: pointer;
+margin-left: 10px;
+font-size: 1.2rem;
+}
+
+.review-header .edit-icon {
+color: #4CAF50; /* Cor do ícone de edição */
+}
+
+.review-header .delete-icon {
+color: #F44336; /* Cor do ícone de exclusão */
+}
+
+.review {
+margin-bottom: 3%;
+}
+
+.review-username {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: bold !important;
+}
+
+.review-rate {
+color: #F6884A;
+font-size: 1.2rem;
+margin-right: 5px;
+}
+
+.review-movie-name {
+color: #7993B0;
+font-size: 1.1rem;
+font-weight: bold;
+margin-left: -5px;
+}

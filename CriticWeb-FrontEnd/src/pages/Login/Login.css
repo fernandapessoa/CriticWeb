@@ -1,0 +1,107 @@
+.container-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    height: 100vh;          
+}
+
+.loginBox {
+    background-color: #3A5B80;
+    width: 550px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribui espaço uniformemente entre os itens */
+    align-items: center; /* Centraliza horizontalmente */
+    border-radius: 5%;
+}
+
+.sinup-field{
+    margin-top: 3%;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column; /* Define a direção dos itens para uma coluna vertical */
+    align-items: center; /* Centraliza horizontalmente todos os itens dentro de `.content` */
+    justify-content: center; /* Centraliza verticalmente todos os itens dentro de `.content` */
+    width: 100%; /* Ajuste a largura conforme necessário, ou deixe como está */
+}
+
+.logo-image {
+    height: 100px; /* Aumentado de 70px para 100px */
+    margin-bottom: 25px; /* Espaço abaixo da logo */
+    margin-top: -30px;
+}
+
+.inputField {
+    width: 80%;
+    padding: 10px;
+    margin: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #8EC3DB;
+}
+
+.loginButton {
+    width: 35%;
+    padding: 5px;
+    margin-top: 20px;
+    margin-left: auto; /* Centraliza horizontalmente se necessário */
+    margin-right: auto; /* Centraliza horizontalmente se necessário */
+    background-color: #8EC3DB; /* Cor Azul Claro, comentário atualizado */
+    color: #171717; /* Correção da cor com adição de '#' */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 15px;
+}
+
+.errorMessage {
+    color: #FF0000; /* Vermelho */
+    margin-bottom: 10px; /* Adiciona espaço abaixo da mensagem de erro */
+    text-align: center; /* Centraliza a mensagem de erro */
+}
+
+.signupLink {
+    margin-top: 20px;
+    color: #FFFFFF; /* Branco */
+    text-decoration: none;
+}
+
+.signupLink:hover {
+    text-decoration: underline;
+}
+
+.fieldLabel {
+    width: 80%; /* Ajuste conforme necessário */
+    margin-left: 15px; /* Espaço antes do input */
+    color: #020202; /* Cor do texto */
+    font-size: 15px; /* Tamanho do texto */
+    font-weight: 600;
+}
+
+.login-button {
+    width: 100%; /* Ocupa a largura total do contêiner pai para flexibilidade */
+    display: flex; /* Usa flexbox para alinhamento interno */
+    justify-content: center; /* Centraliza o botão horizontalmente */
+    align-items: center; /* Centraliza o botão verticalmente se necessário */
+    margin-top: 5%;
+}
+
+.entrar-text{
+    color: #020202;
+    font-size: 25px; /* Tamanho do texto */
+    font-weight: 700;
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+
+.label-input {
+    width: 175%; /* Ajusta para a largura total do contêiner */
+    margin-left: -22%;
+}

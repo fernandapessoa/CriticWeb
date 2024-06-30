@@ -1,0 +1,150 @@
+.container-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: #B0BEC5; /* Cor do texto */
+    margin-top: 7vh;
+}
+
+.account-info {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    background-color: #2C3E50; /* Adicione um fundo para destaque */
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.logout-field {
+    text-align: center;
+}
+
+.info-field {
+    margin-bottom: 20px;
+}
+
+.info-field h2 {
+    margin: 0;
+    color: #90CAF9; /* Cor do título */
+    
+}
+
+.info-field p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #5A708F;
+}
+
+.logout-button {
+    background-color: #42A5F5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logout-button:hover {
+    background-color: #1E88E5;
+}
+
+.conteiner-account-critics{
+    width: 80%;
+    margin-top: 5%;
+}
+
+.account-reviews h2 {
+    margin-bottom: 5%;
+    text-align: center; /* Centraliza o texto */
+    
+  }
+
+.account-reviews{
+    display: flex;
+    justify-content: center;
+}
+
+.title-account-critcs{
+    margin-bottom: 5%;
+    text-align: center; 
+}
+    
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 3%;
+}
+  
+.review-header .bi {
+cursor: pointer;
+margin-left: 10px;
+margin-bottom: 3%;
+}
+
+.review-header .bi-pencil-square {
+color: #4CAF50; /* Cor do ícone de edição */
+}
+
+.review-header .bi-trash {
+color: #F44336; /* Cor do ícone de exclusão */
+}
+  
+
+.review {
+    margin-bottom: 3%;
+}
+
+.mycritics-reviews .review-username {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: bold !important;
+}
+
+.review-rate {
+color: #F6884A;
+font-size: 1.2rem;
+margin-right: 5px;
+}
+
+.review-movie-name {
+color: #7993B0;
+font-size: 1.1rem;
+font-weight: bold;
+margin-left: -5px;
+}
+
+.btn-cancel-delete{
+    background-color:#2C3E50;
+    width: 100px;
+    border-radius: 19px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.btn-delete{
+    background-color:#F44336;
+    width: 100px;
+    border-radius: 19px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.reviews-list{
+    background-color:#1e2c3b;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 10px;
+    width: 80%;
+}

@@ -1,0 +1,25 @@
+a{
+  color:#D02B76 !important;
+  font-weight: 700 !important;
+  font-size: larger !important;
+}
+
+.container-fluid{
+  margin-top: 1%;
+}
+
+.navbar{
+  background-color: #111820  !important;
+  justify-content: space-between !important;
+  padding: 0 !important;
+}
+
+.bi{
+  font-size: 2rem !important; 
+  color: white !important;
+  margin-right: 2rem;
+}
+
+.navbar-brand{
+  
+}

@@ -1,0 +1,194 @@
+.registerMovie-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: #B0BEC5; /* Cor do texto */
+}
+
+.title {
+  color: #90CAF9; /* Cor do título */
+  margin-bottom: 20px;
+}
+
+.registerMovie-form {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 10%;
+}
+
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 300px;
+  border: 2px dashed #90CAF9;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: #90CAF9;
+}
+
+.image-preview {
+  margin-top: 10px;
+}
+
+.image-preview img {
+  max-width: 200px;
+  max-height: 300px;
+  border-radius: 10px;
+}
+
+.upload-input {
+  display: none;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #90CAF9;
+  border-radius: 5px;
+  background-color: #333;
+  color: #B0BEC5;
+  margin-top: 1vh;
+}
+
+textarea.form-control {
+  resize: vertical;
+  height: 100px;
+}
+
+.genres-list {
+  margin-top: 1vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.genre-tag {
+  background-color: #42A5F5;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.remove-genre-button {
+  background: none;
+  border: none;
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 1vh;
+}
+
+.search-input {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.search-button {
+  background-color: #1E90FF ;
+  color: white !important;
+  border: none !important;  
+  margin-left: 1% !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  font-weight: bold;
+  height: 100% !important; /* Ajusta a altura para se alinhar com o campo de seleção */
+  width: 30% !important;
+}
+
+.search-button:hover {
+  background-color: #4682B4;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px; /* Adiciona espaço acima dos botões */
+}
+
+.discard-button, .submit-button {
+  flex: 1; /* Faz os botões crescerem igualmente */
+  text-align: center; /* Centraliza o texto dos botões */
+  font-weight: bold; /* Deixa o texto em negrito */
+  border: 2px solid; /* Adiciona uma borda */
+}
+
+.discard-button {
+  background-color: #8B0000 !important; /* Nova cor do botão Descatar */
+  color: white !important;
+  border-color: #8B0000 !important; /* Cor da borda */
+  padding: 10px 20px !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+}
+
+.discard-button:hover {
+  background-color: #A52A2A !important; /* Cor de hover do botão Descatar */
+  border-color: #A52A2A !important; /* Cor da borda no hover */
+}
+
+.submit-button {
+  background-color: #1E90FF !important; /* Nova cor do botão Cadastrar Filme */
+  color: white !important;
+  border-color: #1E90FF !important; /* Cor da borda */
+  padding: 10px 20px !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+}
+
+.submit-button:hover {
+  background-color: #4682B4 !important; /* Cor de hover do botão Cadastrar Filme */
+  border-color: #4682B4 !important; /* Cor da borda no hover */
+}
+
+/* Flex layout for aligning elements side by side */
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.flex-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.error-message {
+  color: #FF0000; /* Vermelho */
+  margin-bottom: 10px; /* Adiciona espaço abaixo da mensagem de erro */
+  text-align: center; /* Centraliza a mensagem de erro */
+}

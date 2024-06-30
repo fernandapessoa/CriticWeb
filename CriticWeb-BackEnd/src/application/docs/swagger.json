@@ -1,0 +1,1549 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "CriticWeb BackEnd",
+    "description": "Documentação das APIs do subsistema backend CriticWeb.",
+    "version": "1.0.0"
+  },
+  "basePath": "/criticweb",
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/authenticate/register": {
+      "post": {
+        "summary": "Cadastra usuário",
+        "description": "Cadastra um usuário com base em nome, email e senha fornecidos. Retorna token JWT no header da resposta, dentro de Authorization.",
+        "tags": ["Authenticate"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Dados que devem ser enviados na requisição",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "confirmPassword": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Successfull registration"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "The data provided is not valid to create an account."
+                },
+                {
+                  "message": "Invalid field name. It must be a string."
+                },
+                {
+                  "message": "Invalid field name. It must be at least 8 characters and at most 20."
+                },
+                {
+                  "message": "Field name cannot be empty."
+                },
+                {
+                  "message": "Invalid field email. It must be a valid email."
+                },
+                {
+                  "message": "Field email cannot be empty."
+                },
+                {
+                  "message": "Invalid field password. It must be a string"
+                },
+                {
+                  "message": "Invalid field password. It must be at least 8 characters and at most 20."
+                },
+                {
+                  "message": "Field password cannot be empty."
+                },
+                {
+                  "message": "Invalid field confirmPassword. It must be a string"
+                },
+                {
+                  "message": "Invalid field confirmPassword. It must be at least 8 characters and at most 20."
+                },
+                {
+                  "message": "Field confirmPassword cannot be empty."
+                },
+                {
+                  "message": "Invalid field confirmPassword. It must be equal to password."
+                }
+              ]
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Internal Server Error."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/authenticate/login": {
+      "post": {
+        "summary": "Autentica usuário",
+        "description": "Autentica um usuário com base no email e na senha fornecidos. Retorna token JWT no header da resposta, dentro de Authorization.",
+        "tags": ["Authenticate"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Dados que devem ser enviados na requisição",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Successfull login."
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Email or password incorrect."
+                },
+                {
+                  "message": "Invalid field email. It must be a valid email."
+                },
+                {
+                  "message": "Field email cannot be empty."
+                },
+                {
+                  "message": "Field password cannot be empty."
+                }
+              ]
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Internal Server Error."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/movie": {
+      "post": {
+        "summary": "Cadastra um filme",
+        "description": "Cadastra um novo filme no sistema.",
+        "tags": ["Movie"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Token Bearer",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Dados que devem ser enviados na requisição",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "year": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Invalid field title. It must be a string."
+                },
+                {
+                  "message": "Invalid field title. It must be at least 3 characters and at most 50."
+                },
+                {
+                  "message": "Field title cannot be empty."
+                },
+                {
+                  "message": "Invalid field category. It must be a string."
+                },
+                {
+                  "message": "Invalid field category. It must be at least 3 characters and at most 50."
+                },
+                {
+                  "message": "Field category cannot be empty."
+                },
+                {
+                  "message": "Invalid field image. It must be a string."
+                },
+                {
+                  "message": "Invalid field image. It must be at least 5 characters and at most 200."
+                },
+                {
+                  "message": "Field image cannot be empty."
+                },
+                {
+                  "message": "Invalid field description. It must be a string."
+                },
+                {
+                  "message": "Invalid field description. It must be at least 10 characters and at most 500."
+                },
+                {
+                  "message": "Field description cannot be empty."
+                },
+                {
+                  "message": "Invalid field category. It must contain only allowed categories: 'Ação', 'Aventura', 'Comédia', 'Drama', 'Ficção Científica', 'Terror', 'Romance', 'Animação', 'Documentário', 'Fantasia'. If there is more than one value, they must be separated by comma without blank: Romance,Drama."
+                }
+              ]
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Token missing."
+                },
+                {
+                  "message": "Invalid token."
+                }
+              ]
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Internal Server Error."
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Lista os filmes",
+        "description": "Lista todos os filmes cadastrados no sistema.",
+        "tags": ["Movie"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Token Bearer",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "Qauntidade de itens a serem pulados",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "Qauntidade limite de itens a serem retornados",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "totalItems": {
+                  "type": "integer"
+                },
+                "currentPage": {
+                  "type": "integer"
+                },
+                "limit": {
+                  "type": "integer"
+                },
+                "totalPages": {
+                  "type": "integer"
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "movieId": {
+                        "type": "number"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "category": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "rating": {
+                        "type": "integer"
+                      },
+                      "year": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Invalid field offset. It must be no greater than 250."
+                },
+                {
+                  "message": "Invalid fiield offset. It must be no less than 1."
+                },
+                {
+                  "message": "Invalid field offset. It must be a number."
+                },
+                {
+                  "message": "Invalid field limit. It must be no greater than 250."
+                },
+                {
+                  "message": "Invalid field limit. It must be no less than 1."
+                },
+                {
+                  "message": "Invalid field limit. It must be a number."
+                }
+              ]
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Token missing."
+                },
+                {
+                  "message": "Invalid token."
+                }
+              ]
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Internal Server Error."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/movie/{movieId}": {
+      "get": {
+        "summary": "Busca um filme com base no seu id",
+        "description": "Busca um filme com base no id e o retorna junto com suas críticas se for encontrado.",
+        "tags": ["Movie"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Token Bearer",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "movieId",
+            "description": "Id do filme",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "movieId": {
+                  "type": "integer"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "string"
+                },
+                "year": {
+                  "type": "integer"
+                },
+                "reviews": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "isLiked": {
+                        "type": "boolean"
+                      },
+                      "rating": {
+                        "type": "number"
+                      },
+                      "reviewer": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "rating": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Invalid field movieId. It must be a number."
+                },
+                {
+                  "message": "Field movieId must be no less than 1."
+                }
+              ]
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Token missing."
+                },
+                {
+                  "message": "Invalid token."
+                }
+              ]
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "No movie found."
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Internal Server Error."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/review/{movieId}": {
+      "post": {
+        "summary": "Cadastra uma crítica",
+        "description": "Cadastra uma nova crítica no sistema.",
+        "tags": ["Review"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Token Bearer",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "movieId",
+            "description": "Id do filme",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Dados que devem ser enviados na requisição",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "rating": {
+                  "type": "number"
+                },
+                "isLiked": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["description", "rating"]
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Invalid field isLiked. It must be a boolean."
+                },
+                {
+                  "message": "Invalid field title. It must be a string."
+                },
+                {
+                  "message": "Field description cannot be empty."
+                },
+                {
+                  "message": "Invalid field rating. It must be a float with one decimal place."
+                },
+                {
+                  "message": "Field rating cannot be empty."
+                },
+                {
+                  "message": "Invalid field rating. It must be no less than 0."
+                },
+                {
+                  "message": "Invalid field rating. It must be no greater than 10."
+                },
+                {
+                  "message": "Invalid field movieId. It must be a number."
+                },
+                {
+                  "message": "Invalid field movieId. It must be no less than 1."
+                }
+              ]
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Token missing."
+                },
+                {
+                  "message": "Invalid token."
+                }
+              ]
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "No movie found."
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Internal Server Error."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/review": {
+      "get": {
+        "summary": "Lista as críticas dos usuários gerais",
+        "description": "Lista todas as críticas cadastradas no sistema.",
+        "tags": ["Review"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Token Bearer",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "Qauntidade de itens a serem pulados",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "Qauntidade limite de itens a serem retornados",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "totalItems": {
+                  "type": "integer"
+                },
+                "currentPage": {
+                  "type": "integer"
+                },
+                "limit": {
+                  "type": "integer"
+                },
+                "totalPages": {
+                  "type": "integer"
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "reviewId": {
+                        "type": "integer"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "rating": {
+                        "type": "number"
+                      },
+                      "isLiked": {
+                        "type": "boolean"
+                      },
+                      "reviewer": {
+                        "type": "string"
+                      },
+                      "movie": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string"
+                          },
+                          "image": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "year": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Invalid field offset. It must be no greater than 250."
+                },
+                {
+                  "message": "Invalid fiield offset. It must be no less than 1."
+                },
+                {
+                  "message": "Invalid field offset. It must be a number."
+                },
+                {
+                  "message": "Invalid field limit. It must be no greater than 250."
+                },
+                {
+                  "message": "Invalid field limit. It must be no less than 1."
+                },
+                {
+                  "message": "Invalid field limit. It must be a number."
+                }
+              ]
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Token missing."
+                },
+                {
+                  "message": "Invalid token."
+                }
+              ]
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Internal Server Error."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/review/user-profile": {
+      "get": {
+        "summary": "Lista as críticas do usuário logado",
+        "description": "Lista apenas as críticas do usuário que estiver logado.",
+        "tags": ["Review"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Token Bearer",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "Qauntidade de itens a serem pulados",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "Qauntidade limite de itens a serem retornados",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "totalItems": {
+                  "type": "integer"
+                },
+                "currentPage": {
+                  "type": "integer"
+                },
+                "limit": {
+                  "type": "integer"
+                },
+                "totalPages": {
+                  "type": "integer"
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "reviewId": {
+                        "type": "integer"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "rating": {
+                        "type": "number"
+                      },
+                      "isLiked": {
+                        "type": "boolean"
+                      },
+                      "reviewer": {
+                        "type": "string"
+                      },
+                      "movie": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string"
+                          },
+                          "image": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "year": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Invalid field offset. It must be no greater than 250."
+                },
+                {
+                  "message": "Invalid fiield offset. It must be no less than 1."
+                },
+                {
+                  "message": "Invalid field offset. It must be a number."
+                },
+                {
+                  "message": "Invalid field limit. It must be no greater than 250."
+                },
+                {
+                  "message": "Invalid field limit. It must be no less than 1."
+                },
+                {
+                  "message": "Invalid field limit. It must be a number."
+                }
+              ]
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Token missing."
+                },
+                {
+                  "message": "Invalid token."
+                }
+              ]
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Internal Server Error."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/review/{title}": {
+      "get": {
+        "summary": "Busca as críticas de um filme",
+        "description": "Busca as críticas de um filme no sistema.",
+        "tags": ["Review"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Token Bearer",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "title",
+            "description": "Nome do filme",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "Qauntidade de itens a serem pulados",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "Qauntidade limite de itens a serem retornados",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "totalItems": {
+                  "type": "integer"
+                },
+                "currentPage": {
+                  "type": "integer"
+                },
+                "limit": {
+                  "type": "integer"
+                },
+                "totalPages": {
+                  "type": "integer"
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "reviewId": {
+                        "type": "integer"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "rating": {
+                        "type": "number"
+                      },
+                      "isLiked": {
+                        "type": "boolean"
+                      },
+                      "reviewer": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Invalid field offset. It must be no greater than 250."
+                },
+                {
+                  "message": "Invalid fiield offset. It must be no less than 1."
+                },
+                {
+                  "message": "Invalid field offset. It must be a number."
+                },
+                {
+                  "message": "Invalid field limit. It must be no greater than 250."
+                },
+                {
+                  "message": "Invalid field limit. It must be no less than 1."
+                },
+                {
+                  "message": "Invalid field limit. It must be a number."
+                }
+              ]
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Token missing."
+                },
+                {
+                  "message": "Invalid token."
+                },
+                {
+                  "message": "Action not authorized."
+                }
+              ]
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Review not found."
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Internal Server Error."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/review/{reviewId}": {
+      "put": {
+        "summary": "Atualiza uma crítica",
+        "description": "Atualiza uma crítica no sistema.",
+        "tags": ["Review"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Token Bearer",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "reviewId",
+            "description": "Id da crítica",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Dados que devem ser enviados na requisição",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "rating": {
+                  "type": "number"
+                },
+                "isLiked": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["description", "rating"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Updated"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Invalid field isLiked. It must be a boolean."
+                },
+                {
+                  "message": "Invalid field title. It must be a string."
+                },
+                {
+                  "message": "Field description cannot be empty."
+                },
+                {
+                  "message": "Invalid field rating. It must be a float with one decimal place."
+                },
+                {
+                  "message": "Field rating cannot be empty."
+                },
+                {
+                  "message": "Invalid field rating. It must be no less than 0."
+                },
+                {
+                  "message": "Invalid field rating. It must be no greater than 10."
+                },
+                {
+                  "message": "Invalid field movieId. It must be a number."
+                },
+                {
+                  "message": "Invalid field movieId. It must be no less than 1."
+                }
+              ]
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Token missing."
+                },
+                {
+                  "message": "Invalid token."
+                },
+                {
+                  "message": "Action not authorized."
+                }
+              ]
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Review not found."
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Internal Server Error."
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deleta uma crítica",
+        "description": "Deleta uma crítica no sistema.",
+        "tags": ["Review"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Token Bearer",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "reviewId",
+            "description": "Id da crítica",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "message": "Token missing."
+                },
+                {
+                  "message": "Invalid token."
+                },
+                {
+                  "message": "Action not authorized."
+                }
+              ]
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Review not found."
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Internal Server Error."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

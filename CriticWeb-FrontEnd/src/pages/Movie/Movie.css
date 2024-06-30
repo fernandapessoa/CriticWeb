@@ -1,0 +1,120 @@
+.filme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.cartao {
+  display: flex;
+  flex-direction: row;
+  margin-left: 7%;
+  width: 74%;
+}
+
+.cartaz img {
+  width: 300px; /* Alterado para 30% da largura do cartao */
+  height: auto; /* Altura automática para manter a proporção */
+  border-radius: 3%;
+}
+
+.detalhes {
+  color: #3797C5;
+  font-size: 1.3rem;
+  margin-left: 4rem;
+}
+
+.sinopse {
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.nome {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: -0.2rem;
+  color: #A0E1FF;
+}
+
+.nota {
+  color: #F6884A;
+}
+
+.titulo {
+  font-weight: 700;
+}
+
+.botao-avaliar{
+  background-color: #3797C5;
+  width: 100px;
+  border-radius: 19px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111820;
+}
+
+.comentarios{
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3E546C;
+  margin-left: 8%;
+  margin-right: 10%;
+  margin-top: 2rem;
+}
+
+.reviews{
+  margin-left: 10px;
+}
+
+.modal-footer{
+  background-color: #1A2939;
+  border:none;
+}
+
+.modal-header{
+  background-color: #1A2939;
+  color: #9ea7b1;
+  
+  border:none;
+}
+
+.modal-body{
+  background-color: #1A2939;
+  
+}
+
+.movie-input{
+  background-color: #3E5165;
+}
+
+.modal-movie{
+  color: #A0E1FF;
+  font-size: 1.5rem;
+}
+
+.movie-placeholder{
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-cancel{
+  background-color: #6A2626;
+  width: 100px;
+  border-radius: 19px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.btn-save{
+  background-color: #3797C5;
+  width: 100px;
+  border-radius: 19px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+}
+

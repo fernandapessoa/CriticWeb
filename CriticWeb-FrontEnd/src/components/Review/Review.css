@@ -1,0 +1,63 @@
+/* Review.css */
+.review {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  background-color: #1f2c3a /* Ajuste a cor de fundo conforme necessário */
+}
+
+.review-user-rate {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Permitir que os itens se ajustem em várias linhas se necessário */
+}
+
+.review-username {
+  color: #4AC6FF;
+  font-size: 1.2rem;
+  margin-right: 15px;
+  text-underline-offset: 4px;
+  font-weight: bold !important;
+}
+
+.review-rate {
+  color: #F6884A;
+  font-size: 1.2rem;
+}
+
+.review-movie-name {
+  color: #7993B0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-left: 5px; /* Ajustar para manter próximo ao rate */
+  margin-right: -2px;
+}
+
+.review-description {
+  color: #ffff !important;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-top: -15px;
+  white-space: pre-wrap; /* Preserva as quebras de linha e espaços */
+  word-wrap: break-word;
+}
+
+.bi-heart {
+  font-size: 1rem !important;
+  color: #4AC6FF !important;
+  margin-right: 8px;
+}
+
+.bi-heart-fill {
+  font-size: 1rem !important;
+  color: #4AC6FF !important;
+  margin-right: 8px;
+}
+
+.review-like {
+  font-size: 1rem;
+  color: #4AC6FF !important;
+  font-weight: 400;
+  margin-top: -8px;
+}
