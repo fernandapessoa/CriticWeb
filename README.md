@@ -25,7 +25,7 @@ Integrantes:
 
     `npm i`
 
-3.  Crie um arquivo `.env` seguindo o formato de `.env.example`. Especifique as informações do seu banco de dados e da url que está rodando o front-end. Exemplo:  
+3.  Crie um arquivo `.env` seguindo o formato de `.env.example`. Especifique as informações do seu banco de dados e da url que está rodando o front-end. É necessártio ter o Postgres instalado na sua máquina. A interface gráfica pode ser de sua preferência, como DBeaver ou PgAdmin. Crie um banco de dados e um esquema, os nomes devem ser os mesmos definidos no arquivo `.env`. Exemplo:  
 
         
         TYPEORM_TYPE=postgres
