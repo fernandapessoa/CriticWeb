@@ -44,7 +44,7 @@ CriticWeb é uma aplicação web para realizar crítica de filmes. Ela é uma ap
 
 ### Executando o Front-End:
 
-Agora que nosso back-end já está em execução. Podemos executar nosso front-end. Para isso, siga as instruções abaixo.
+Agora que nosso back-end já está em execução, podemos executar nosso front-end. Para isso, siga as instruções abaixo.
 
 Antes de começar, certifique-se de ter o [Node.js](https://nodejs.org/en/) instalado em sua máquina.
 
