@@ -1,8 +1,15 @@
 # Criticweb
 
-CriticWeb é uma aplicação web para realizar crítica de filmes. Ela é uma aplicação cliente-servidor, com o front-end em React, typescript, react e bootstrap5 e o backend sendo API RestFul com arquitetura em camadas para separar as rotas, lógica de negócios e persistência ao banco de dados.
+CriticWeb é uma aplicação web para realizar crítica de filmes. Ela é uma aplicação cliente-servidor, com o front-end em React, Typescript, Vite e Bootstrap5 e o backend sendo API RestFul em Tpescript e Node.js com arquitetura em camadas para separar as rotas, lógica de negócios e persistência ao banco de dados.
 
-## Como Executar
+Trabalho desenvolvido para a matéria de Programação para Web, ministrada pelo Professor Hudson Silva Borges.
+Integrantes:
+- Caetano Santana
+- Dener Fernandes
+- Fernanda Pessoa
+- Livia Rosa 
+
+## Como Executar localmente
 
 1. Clone o repostirório com 
   
