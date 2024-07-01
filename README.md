@@ -7,7 +7,9 @@ Integrantes:
 - Caetano Santana
 - Dener Fernandes
 - Fernanda Pessoa
-- Livia Rosa 
+- Livia Rosa
+
+  Link do Figma: https://www.figma.com/design/O6DZoAtm4VoGtO6TyGIGqV/CriticWeb?node-id=2-3&t=Lr9oqXfzm2ZSzyC7-1
 
 ## Como Executar localmente
 
